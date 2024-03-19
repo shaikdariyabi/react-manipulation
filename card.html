@@ -1,0 +1,54 @@
+<html>
+<head>
+  
+  <title>UI CARD</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+ 
+</head>
+<body>
+  
+  <div class="users-app">
+    Loading...
+  </div>
+  
+  
+  <script type="text/jsx">
+    const Welcome = <h1>User</h1>; 
+    
+    function UserCard(attrs) {
+      console.log(attrs);
+      return <div className="card">
+          <img src="https://placehold.it/150x150" />
+          <h2>{attrs.name}</h2>
+          <p>{attrs.job}</p>
+          <p>{attrs.image}</p>
+          <p>
+            <small>Salary: {attrs.salary}</small>
+          </p>
+          <p>
+            <small>Mail: {attrs.mail}</small>
+        </p>
+        
+
+      </div>
+    }
+    
+    function MainApp() {
+      return <section>
+        <UserCard name="Siddik" job="photographer" mail="siddik@gmail.com" image src="https://picsum.photos/200/300
+        "  />
+        <UserCard name="Hala" job="web Developer"  mail="Hala345@gmail.com"/>
+        <UserCard name="Suhana" job="influencer" salary="5LPA" />
+      </section>
+    }
+    
+    
+    const domContainer = document.querySelector(".users-app");
+    
+    ReactDOM.render(<MainApp />,  domContainer)
+  </script>
+
+</body>
+</html>
